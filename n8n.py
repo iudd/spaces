@@ -111,6 +111,7 @@ Check out the configuration reference at https://huggingface.co/docs/hub/spaces-
         repo_id=repoid,
         repo_type="space",
         space_sdk="docker",
+        exist_ok=True,  # 关键修复 1：如果空间已存在，不报错继续运行
         space_secrets=[
             {"key": "N8N_ENCRYPTION_KEY", "value": key},
             {"key": "RCLONE_CONF", "value": rclone_conf},
